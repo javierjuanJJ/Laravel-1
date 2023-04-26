@@ -1,0 +1,65 @@
+    1  nano installDocker.sh
+    2  sudo sh installDocker.sh 
+    3  clear
+    4  nano installLaravel.sh
+    5  sudo sh installLaravel.sh 
+    6  ls
+    7  cd example-app/
+    8  ls
+    9  ls app
+   10  ls public
+   11  php artisan aerve
+   12  sudo apt install apache2 php-common libapache2-mod-php php-cli -y
+   13  php artisan serve
+   14  chmod -R 777 .
+   15  sudo chmod -R 777 .
+   16  php artisan serve
+   17  sudo chmod -R 777 ./*
+   18  php artisan serve
+   19  sudo chown jj:jj ./*
+   20  php artisan serve
+   21  sudo php artisan serve
+   22  php artisan serve
+   23  sudo apt-get install php8.2-xml
+   24  sudo apt-get install php8.1-xml
+   25* sudo apt-get install php-dom
+   26  php artisan serve
+   27  php artisan serve --host 192.168.1.148 --port 8080
+   28  php artisan serve --host 192.168.1.148 --port 8000
+   29  ls
+   30  ls app
+   31  ls app/Models/
+   32  ls resources/
+   33  ls resources/views/
+   34  cat resources/views/welcome.blade.php 
+   35  php artisan make:auth
+   36  clear
+   37  nanao installSymfony.sh
+   38  nano installSymfony.sh
+   39  mv installSymfony.sh ..
+   40  cd
+   41  sudo sj installSymfony.sh 
+   42  sudo sh installSymfony.sh 
+   43  sudo mv /root/.symfony5/bin/symfony /usr/local/bin/symfony
+   44  sudo symfony check:requirements
+   45  ifconfig
+   46  cd example-app/
+   47  composer require laravel/ui
+   48  php artisan ui:auth
+   49  sudo apt install composer
+   50  composer require laravel/ui
+   51  php artisan ui:auth
+   52  sudo composer require laravel/ui
+   53  php artisan ui:auth
+   54  composer require laravel/ui:*
+   55  composer require laravel/ui
+   56  sudo composer require laravel/ui
+   57  composer require laravel/ui --dev
+   58  composer require laravel/ui:^2.1
+   59  php artisan serve --host 192.168.1.148 --port 8080
+   60  composer require laravel/ui
+   61  sudo apt-get install php-curl
+   62  composer require laravel/ui
+   63  php artisan ui:auth
+   64  clear
+   65  history > list.txt

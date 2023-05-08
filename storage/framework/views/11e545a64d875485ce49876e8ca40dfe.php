@@ -1,14 +1,14 @@
-@extends('layouts.app')
-
-@section('content')
-    <div class="container">
+<?php $__env->startSection('content'); ?>
+<div class="container">
     <div class="row">
         <div class="col-3 p-5">
-            <img src="/svg/freeCodeCampLogo.svg" alt="" class="rounded-circle">
+            <img src="" alt="" class="rounded-circle">
         </div>
         <div class="col-9">
             <div class="col-9 pt-5">
-                <div class="h4">{{ $user->username }}</div>
+                <h1>
+                  freecodecamp
+                </h1>
                 <div class="d-flex">
                     <div><strong class="pr-5">153</strong> posts</div>
                     <div><strong class="pr-5">23k</strong> followers</div>
@@ -32,4 +32,6 @@
         </div>
     </div>
 </div>
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /home/jj/example-app/resources/views/home.blade.php ENDPATH**/ ?>

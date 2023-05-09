@@ -1,14 +1,12 @@
 <?php $__env->startSection('content'); ?>
-<div class="container">
+    <div class="container">
     <div class="row">
         <div class="col-3 p-5">
-            <img src="" alt="" class="rounded-circle">
+            <img src="/svg/freeCodeCampLogo.svg" alt="" class="rounded-circle">
         </div>
         <div class="col-9">
             <div class="col-9 pt-5">
-                <h1>
-                  freecodecamp
-                </h1>
+                <div class="h4"><?php echo e($user->username); ?></div>
                 <div class="d-flex">
                     <div><strong class="pr-5">153</strong> posts</div>
                     <div><strong class="pr-5">23k</strong> followers</div>

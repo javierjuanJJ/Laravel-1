@@ -14,9 +14,9 @@
                     <div><strong class="pr-5">23k</strong> followers</div>
                     <div><strong class="pr-5">212</strong> following</div>
                 </div>
-                <div class="pt-4 font-weight-bold">freeCodeGram</div>
-                <div>Biography</div>
-                <div><a href="#">www.freecodeGram.org</a> </div>
+                <div class="pt-4 font-weight-bold">{{ $user->profile->title }}</div>
+                <div>{{ $user->profile->description }}</div>
+                <div><a href="#">{{ $user->profile->url }}</a> </div>
             </div>
         </div>
         <div class="row pt-5">

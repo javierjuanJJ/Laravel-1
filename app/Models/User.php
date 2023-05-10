@@ -22,6 +22,7 @@ class User extends Authenticatable
         'email',
         'password',
         'username',
+        'id'
     ];
 
     /**
@@ -43,8 +44,13 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function profile()
+    public function posts(): \Illuminate\Database\Eloquent\Relations\hasMany
     {
-        return $this->hasOne(Profile::class);
+        return $this->hasMany(Post::class,"user_id","id");
+    }
+
+    public function profile(): \Illuminate\Database\Eloquent\Relations\HasOne
+    {
+        return $this->hasOne(Profile::class,'user_id', 'id');
     }
 }

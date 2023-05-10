@@ -2,17 +2,19 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Profile extends Model
+class Post extends Model
 {
 
+    protected $guarded = [];
+
     protected $fillable = [
-        'title',
-        'description',
-        'url',
-        'user_id',
+        'caption',
+        'image',
     ];
+
     public function user()
     {
         return $this->belongsTo(User::class);

@@ -1,4 +1,6 @@
-<?php $__env->startSection('content'); ?>
+@extends('layouts.app')
+
+@section('content')
     <div class="container">
     <div class="row">
         <div class="col-3 p-5">
@@ -6,16 +8,16 @@
         </div>
         <div class="col-9">
             <div class="col-9 pt-5 justify-content-between align-items-baseline">
-                <div class="h4"><?php echo e($user->username); ?></div>
+                <div class="h4">{{ $user->username }}</div>
                 <a href="#">Add new posr</a>
                 <div class="d-flex">
                     <div><strong class="pr-5">153</strong> posts</div>
                     <div><strong class="pr-5">23k</strong> followers</div>
                     <div><strong class="pr-5">212</strong> following</div>
                 </div>
-                <div class="pt-4 font-weight-bold"><?php echo e($user->profile->title); ?></div>
-                <div><?php echo e($user->profile->description); ?></div>
-                <div><a href="#"><?php echo e($user->profile->url); ?></a> </div>
+                <div class="pt-4 font-weight-bold">{{ $user->profile->caption }}</div>
+                <div>{{ $user->profile->description }}</div>
+                <div><a href="#">{{ $user->profile->url }}</a> </div>
             </div>
         </div>
         <div class="row pt-5">
@@ -31,6 +33,4 @@
         </div>
     </div>
 </div>
-<?php $__env->stopSection(); ?>
-
-<?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /home/jj/example-app/resources/views/home.blade.php ENDPATH**/ ?>
+@endsection

@@ -21,15 +21,13 @@
             </div>
         </div>
         <div class="row pt-5">
-            <div class="col-4">
-                <img src="" alt="" class="w-100">
-            </div>
-            <div class="col-4">
-                <img src="" alt="" class="w-100">
-            </div>
-            <div class="col-4">
-                <img src="" alt="" class="w-100">
-            </div>
+            @foreach($user->posts as $post)
+
+                <div class="col-4 pb-4">
+                    <img src="/storage/{{$post->image}}" alt="" class="w-100">
+                </div>
+
+            @endforeach
         </div>
     </div>
 </div>

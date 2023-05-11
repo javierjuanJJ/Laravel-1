@@ -31,9 +31,6 @@ class PostsController extends Controller
 
         auth()->user()->posts()->create($data);
 
-        Post::create($data);
-
-
         dd(request()->all());
     }
 }

@@ -15,6 +15,9 @@ class Post extends Model
         'image',
     ];
 
+    // Disable the model timestamps
+    public $timestamps = false;
+
     public function user()
     {
         return $this->belongsTo(User::class);

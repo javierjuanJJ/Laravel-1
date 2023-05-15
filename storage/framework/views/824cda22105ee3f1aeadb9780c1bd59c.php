@@ -13,21 +13,19 @@
                     <div><strong class="pr-5">23k</strong> followers</div>
                     <div><strong class="pr-5">212</strong> following</div>
                 </div>
-                <div class="pt-4 font-weight-bold"><?php echo e($user->profile()->title); ?></div>
-                <div><?php echo e($user->profile()->description); ?></div>
-                <div><a href="#"><?php echo e($user->profile()->url); ?></a> </div>
+                <div class="pt-4 font-weight-bold"><?php echo e($user->profile->caption); ?></div>
+                <div><?php echo e($user->profile->description); ?></div>
+                <div><a href="#"><?php echo e($user->profile->url); ?></a> </div>
             </div>
         </div>
         <div class="row pt-5">
-            <div class="col-4">
-                <img src="" alt="" class="w-100">
-            </div>
-            <div class="col-4">
-                <img src="" alt="" class="w-100">
-            </div>
-            <div class="col-4">
-                <img src="" alt="" class="w-100">
-            </div>
+            <?php $__currentLoopData = $user->posts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $post): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+
+                <div class="col-4">
+                    <img src="/storage/<?php echo e($post->image); ?>" alt="" class="w-100">
+                </div>
+
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
         </div>
     </div>
 </div>

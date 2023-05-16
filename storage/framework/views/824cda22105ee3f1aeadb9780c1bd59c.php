@@ -21,8 +21,9 @@
         <div class="row pt-5">
             <?php $__currentLoopData = $user->posts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $post): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 
-                <div class="col-4">
-                    <img src="/storage/<?php echo e($post->image); ?>" alt="" class="w-100">
+                <div class="col-4 pb-4">
+                    <a href="/p/<?php echo e($post->id); ?>">
+                        <img src="/storage/<?php echo e($post->image); ?>" alt="" class="w-100"></a>
                 </div>
 
             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>

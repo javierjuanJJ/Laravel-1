@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use \App\Models\User;
 use Illuminate\Http\Request;
+use Intervention\Image\Facades\Image;
 
 class ProfilesController extends Controller
 {
@@ -12,7 +13,7 @@ class ProfilesController extends Controller
     {
         //$user = User::findOrFail($user);
 
-        if ($user->profile == null){
+        if ($user == null || $user->profile == null){
             $user = User::findOrFail(auth()->id());
         }
 
@@ -22,11 +23,13 @@ class ProfilesController extends Controller
     public function edit(\App\Models\User $user)
     {
         //$user = User::findOrFail($user);
+        $this->authorize('update', $user->profile);
         return view('profiles.edit', compact('user'));
     }
 
     public function update(\App\Models\User $user)
     {
+        $this->authorize('update', $user->profile);
         $sata = \request()->validate([
             'title' => 'required',
             'description' => 'required',
@@ -37,7 +40,27 @@ class ProfilesController extends Controller
         // dd($sata);
         $user->profile()->update($sata);
 
-        //auth()->user()->profile->update($sata);
+
+
+        if(request('image')){
+            $imagePath = request('image')->store('uploads', 'public');
+
+            $image = Image::make(public_path("storage/{$imagePath}"))->fit(1000,1000);
+
+            $image->save();
+        }
+
+//        dd(array_merge(
+//            $sata,
+//            ['image' => '',]
+//
+//        ));
+
+        auth()->user()->profile->update(array_merge(
+            $sata,
+            ['image' => '',]
+
+        ));
 
         return redirect("/profile/{$user->id}");
     }

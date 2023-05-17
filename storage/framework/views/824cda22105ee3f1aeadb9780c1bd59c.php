@@ -7,16 +7,17 @@
         <div class="col-9">
             <div class="col-9 pt-5 justify-content-between align-items-baseline">
                 <div class="h4"><?php echo e($user->username); ?></div>
-                <a href="#">Add new posr</a>
-                <div class="d-flex">
-                    <div><strong class="pr-5">153</strong> posts</div>
-                    <div><strong class="pr-5">23k</strong> followers</div>
-                    <div><strong class="pr-5">212</strong> following</div>
-                </div>
-                <div class="pt-4 font-weight-bold"><?php echo e($user->profile->caption); ?></div>
-                <div><?php echo e($user->profile->description); ?></div>
-                <div><a href="#"><?php echo e($user->profile->url); ?></a> </div>
+                <a href="/p/create">Add new posr</a>
             </div>
+            <a href="/profile/<?php echo e($user->id); ?>/edit">Edit profile</a>
+            <div class="d-flex">
+                <div><strong class="pr-5"><?php echo e($user->posts->count()); ?></strong> posts</div>
+                <div><strong class="pr-5">23k</strong> followers</div>
+                <div><strong class="pr-5">212</strong> following</div>
+            </div>
+            <div class="pt-4 font-weight-bold"><?php echo e($user->profile->title); ?></div>
+            <div><?php echo e($user->profile->description); ?></div>
+            <div><a href="#"><?php echo e($user->profile->url); ?></a> </div>
         </div>
         <div class="row pt-5">
             <?php $__currentLoopData = $user->posts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $post): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>

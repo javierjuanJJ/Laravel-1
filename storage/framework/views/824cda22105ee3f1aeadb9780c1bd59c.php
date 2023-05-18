@@ -7,9 +7,16 @@
         <div class="col-9">
             <div class="col-9 pt-5 justify-content-between align-items-baseline">
                 <div class="h4"><?php echo e($user->username); ?></div>
-                <a href="/p/create">Add new posr</a>
+
+                <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('update', $user->profile)): ?>
+                    <a href="/p/create">Add new posr</a>
+                <?php endif; ?>
+
+
             </div>
-            <a href="/profile/<?php echo e($user->id); ?>/edit">Edit profile</a>
+            <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('update', $user->profile)): ?>
+                <a href="/profile/<?php echo e($user->id); ?>/edit">Edit profile</a>
+            <?php endif; ?>
             <div class="d-flex">
                 <div><strong class="pr-5"><?php echo e($user->posts->count()); ?></strong> posts</div>
                 <div><strong class="pr-5">23k</strong> followers</div>

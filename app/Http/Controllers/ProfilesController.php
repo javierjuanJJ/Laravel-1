@@ -34,13 +34,11 @@ class ProfilesController extends Controller
             'title' => 'required',
             'description' => 'required',
             'url' => 'url',
-            'image' => '',
+            'image' => ['required', 'image'],
         ]);
 
         // dd($sata);
         $user->profile()->update($sata);
-
-
 
         if(request('image')){
             $imagePath = request('image')->store('uploads', 'public');
@@ -48,19 +46,20 @@ class ProfilesController extends Controller
             $image = Image::make(public_path("storage/{$imagePath}"))->fit(1000,1000);
 
             $image->save();
+
+            $imageArray = ['image' => $imagePath];
         }
 
-//        dd(array_merge(
-//            $sata,
-//            ['image' => '',]
-//
-//        ));
-
-        auth()->user()->profile->update(array_merge(
+        auth()->user()->profile()->update(array_merge(
             $sata,
-            ['image' => '',]
+            $imageArray ?? []
 
         ));
+//        auth()->user()->profile->update(array_merge(
+//            [
+//                'image' => $imagePath,
+//            ]
+//        ));
 
         return redirect("/profile/{$user->id}");
     }

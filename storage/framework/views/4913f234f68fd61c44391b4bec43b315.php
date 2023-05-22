@@ -7,11 +7,35 @@
                 </div>
                 <div class="col-4">
                     <div>
-                        <h3>
-                            <?php echo e($post->user->username); ?>
+                        <div class="d-flex align-items-center">
+                            <div class="pr-3">
+                                <img style="max-width: 40px;" class="rounded-circle w-100"
+                                     src="/storage/<?php echo e($post->user->profile->image); ?>" alt="">
+                            </div>
+                            <div>
+                                <div class="font-weight-bold">
+                                    <a href="/profile/<?php echo e($post->user->id); ?>">
+                                        <span class="text-dark">
+                                            <?php echo e($post->user->username); ?>
 
-                        </h3>
+                                        </span>
+                                    </a>
+                                    <a href="#" class="pl-3">Follow</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <hr>
+
                         <p>
+                            <span class="font-weight-bold">
+                                <a href="/profile/<?php echo e($post->user->id); ?>">
+                                    <span class="text-dark">
+                                        <?php echo e($post->user->username); ?>
+
+                                    </span>
+                                </a>
+                            </span>
                             <?php echo e($post->caption); ?>
 
                         </p>

@@ -9,7 +9,12 @@
         </div>
         <div class="col-9">
             <div class="col-9 pt-5 justify-content-between align-items-baseline">
-                <div class="h4">{{ $user->username }}</div>
+                <div class="d-flex align-items-center pb-3">
+                    <div class="h4">{{ $user->username }}</div>
+
+{{--                    <button class="btn btn-primary m-lg-4">Follow</button>--}}
+                    <follow-button user-id="{{ $user->id }}"></follow-button>
+                </div>
 
                 @can('update', $user->profile)
                     <a href="/p/create">Add new posr</a>

@@ -3,7 +3,7 @@
     <div class="row">
         <div class="col-3 p-5">
 
-            <img src="/storage/<?php echo e($user->profile->image); ?>" width="100" height="100" alt="" class="rounded-circle">
+            <img src="<?php echo e($user->profile->profileImage()); ?>" width="100" height="100" alt="" class="rounded-circle">
         </div>
         <div class="col-9">
             <div class="col-9 pt-5 justify-content-between align-items-baseline">

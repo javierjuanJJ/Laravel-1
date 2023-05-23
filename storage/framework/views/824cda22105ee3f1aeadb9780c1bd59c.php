@@ -1,3 +1,5 @@
+
+
 <?php $__env->startSection('content'); ?>
     <div class="container">
     <div class="row">
@@ -7,7 +9,12 @@
         </div>
         <div class="col-9">
             <div class="col-9 pt-5 justify-content-between align-items-baseline">
-                <div class="h4"><?php echo e($user->username); ?></div>
+                <div class="d-flex align-items-center pb-3">
+                    <div class="h4"><?php echo e($user->username); ?></div>
+
+
+                    <follow-button user-id="<?php echo e($user->id); ?>"></follow-button>
+                </div>
 
                 <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('update', $user->profile)): ?>
                     <a href="/p/create">Add new posr</a>

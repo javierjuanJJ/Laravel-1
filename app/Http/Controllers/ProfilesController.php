@@ -12,12 +12,13 @@ class ProfilesController extends Controller
     public function index(\App\Models\User $user)
     {
         //$user = User::findOrFail($user);
+        $follows = auth()->user() ? auth()->user()->following->contains($user->id) : false;
 
         if ($user == null || $user->profile == null){
             $user = User::findOrFail(auth()->id());
         }
 
-        return view('profiles.home', compact('user'));
+        return view('profiles.home', compact('user', 'follows'));
     }
 
     public function edit(\App\Models\User $user)

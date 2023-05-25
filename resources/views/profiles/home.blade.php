@@ -26,9 +26,9 @@
                 <a href="/profile/{{ $user->id }}/edit">Edit profile</a>
             @endcan
             <div class="d-flex">
-                <div><strong class="pr-5">{{ $user->posts->count() }}</strong> posts</div>
-                <div><strong class="pr-5">{{ $user->profile->followers->count() }}</strong> followers</div>
-                <div><strong class="pr-5">{{ $user->following->count() }}</strong> following</div>
+                <div><strong class="pr-5">{{ $postCount }}</strong> posts</div>
+                <div><strong class="pr-5">{{ $followersCount }}</strong> followers</div>
+                <div><strong class="pr-5">{{ $followingCount }}</strong> following</div>
             </div>
             <div class="pt-4 font-weight-bold">{{ $user->profile->title }}</div>
             <div>{{ $user->profile->description }}</div>
@@ -43,6 +43,13 @@
                 </div>
 
             @endforeach
+
+                <div class="row">
+                    <div class="col-12 d-flex justify-content-center">
+                        {{ $posts->links() }}
+                    </div>
+                </div>
+
         </div>
     </div>
 </div>
